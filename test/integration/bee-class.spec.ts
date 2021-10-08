@@ -140,6 +140,17 @@ describe('Bee class', () => {
       expect(file.data.text()).toEqual('hello world')
     })
 
+    it('should work with big file Readable', async () => {
+      const bee = new Bee('http://localhost:7777')
+      const readable = createRandomNodeReadable(33_000)
+      const name = 'big-file.bin'
+
+      const result = await bee.uploadFile(getPostageBatch(), readable, name)
+      const file = await bee.downloadFile(result.reference)
+
+      expect(file.name).toEqual(name)
+    })
+
     it('should work with WHATWG readable-stream', async () => {
       const readable = createReadableStream([new TextEncoder().encode('hello '), new TextEncoder().encode('world')])
       const name = 'hello.txt'

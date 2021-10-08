@@ -122,15 +122,18 @@ export function createRandomNodeReadable(totalSize: number, chunkSize = 1000): R
     throw new Error(`totalSize ${totalSize} is not dividable without remainder by chunkSize ${chunkSize}`)
   }
 
-  const stream = new Readable()
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  stream._read = (): void => {}
+  let counter = 0
+  const stream = new Readable({ highWaterMark: chunkSize })
+  stream._read = (): void => {
+    if (counter < totalSize / chunkSize) {
+      stream.push(randomByteArray(chunkSize))
+    } else if (counter === totalSize / chunkSize) {
+      stream.push(null)
+    }
 
-  for (let i = 0; i < totalSize / chunkSize; i++) {
-    stream.push(randomByteArray(chunkSize))
+    counter += 1
+    console.log('Counter: ', counter)
   }
-
-  stream.push(null)
 
   return stream
 }
