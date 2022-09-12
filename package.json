@@ -108,7 +108,7 @@
     "babel-jest": "^28.1.0",
     "babel-loader": "^8.2.5",
     "babel-plugin-add-import-extension": "^1.6.0",
-    "cross-blob": "^2.0.1",
+    "cross-blob": "^3.0.1",
     "cross-env": "^7.0.3",
     "debug": "^4.3.4",
     "depcheck": "^1.4.3",
