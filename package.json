@@ -23,7 +23,7 @@
     "url": "https://github.com/ethersphere/bee-js.git"
   },
   "main": "dist/index.min.mjs",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "browser": {
     "./dist/index.min.mjs": "./dist/index.browser.min.mjs",
     "./src/utils/data.ts": "./src/utils/data.browser.ts",
