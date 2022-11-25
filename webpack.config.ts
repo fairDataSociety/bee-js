@@ -18,7 +18,7 @@ const base = async (env?: Partial<WebpackEnvParams>): Promise<Configuration> => 
   const isBrowser = env?.target === 'web'
   const filename =
     env?.fileName ||
-    ['index', isBrowser ? '.browser' : null, isProduction ? '.min' : null, '.mjs'].filter(Boolean).join('')
+    ['index', isBrowser ? '.browser' : null, isProduction ? '.min' : null, '.js'].filter(Boolean).join('')
   const entry = Path.resolve(__dirname, 'src')
   const path = Path.resolve(__dirname, 'dist')
   const target = env?.target || 'web' // 'node' or 'web'
@@ -57,9 +57,10 @@ const base = async (env?: Partial<WebpackEnvParams>): Promise<Configuration> => 
     output: {
       path,
       filename,
-      // sourceMapFilename: filename + isBrowser ? 'browser' : '' + '.map',
-      // library: 'BeeJs',
-      libraryTarget: 'module',
+      sourceMapFilename: filename + isBrowser ? 'browser' : '' + '.map',
+      library: 'BeeJs',
+      // libraryTarget: 'module',
+      libraryTarget: 'umd',
       globalObject: 'this',
     },
     module: {
@@ -127,7 +128,7 @@ const base = async (env?: Partial<WebpackEnvParams>): Promise<Configuration> => 
     experiments: {
       // Module parse failed: The top-level-await experiment is not enabled (set experiments.topLevelAwait: true to enabled it)
       topLevelAwait: true,
-      outputModule: true,
+      // outputModule: true,
     },
   }
 }
