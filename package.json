@@ -22,10 +22,10 @@
     "type": "git",
     "url": "https://github.com/ethersphere/bee-js.git"
   },
-  "main": "dist/index.min.mjs",
+  "main": "dist/index.min.js",
   "types": "dist/types/index.d.ts",
   "browser": {
-    "./dist/index.min.mjs": "./dist/index.browser.min.mjs",
+    "./dist/index.min.mjs": "./dist/index.browser.min.js",
     "./src/utils/data.ts": "./src/utils/data.browser.ts",
     "./dist/cjs/utils/data.js": "./dist/cjs/utils/data.browser.js",
     "./dist/mjs/utils/data.js": "./dist/mjs/utils/data.browser.js",
@@ -63,8 +63,8 @@
     "fetch-blob": "2.1.2",
     "isomorphic-ws": "^4.0.1",
     "js-sha3": "^0.8.0",
-    "ky": "^0.31.3",
-    "ky-universal": "^0.10.1",
+    "ky": "^0.32.2",
+    "ky-universal": "^0.11.0",
     "semver": "^7.3.5",
     "tar-js": "^0.3.0",
     "utf-8-validate": "^5.0.9",

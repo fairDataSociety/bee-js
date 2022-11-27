@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = function (api) {
-  const targets = '>1% or node >=16 and not ie 11 and not dead'
+  const targets = '>1% or node >=14 and not ie 11 and not dead'
   api.cache(true)
   api.cacheDirectory = true
 
