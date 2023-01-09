@@ -69,7 +69,7 @@
     "tar-js": "^0.3.0",
     "utf-8-validate": "^5.0.9",
     "web-streams-polyfill": "^3.2.1",
-    "ws": "^8.7.0"
+    "ws": "^8.12.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -96,7 +96,7 @@
     "@types/node": "^15.12.4",
     "@types/puppeteer": "^5.4.5",
     "@types/semver": "^7.3.9",
-    "@types/ws": "^8.5.3",
+    "@types/ws": "^8.5.4",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.26.0",
     "babel-jest": "^28.1.0",
